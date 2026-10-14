@@ -4,7 +4,7 @@ Autonomous frontier-based exploration and mapping with a 4-wheel differential dr
 
 ## Demo
 
-[Watch the demo video](YOUR_VIDEO_LINK)
+[Watch the demo video](https://github.com/shanshad/Autonomous_slam_using_nav2_slam_toolbox_and_explore_lite_with_4_wheel_diff_drive_robot/blob/main/Screencast%20from%202026-10-14%2023-31-40.mp4)
 
 ## Requirements
 
