@@ -1,0 +1,633 @@
+<sdf version='1.10'>
+  <world name='empty'>
+    <physics name='1ms' type='ignored'>
+      <max_step_size>0.001</max_step_size>
+      <real_time_factor>1</real_time_factor>
+      <real_time_update_rate>1000</real_time_update_rate>
+    </physics>
+    <plugin name='gz::sim::systems::Physics' filename='gz-sim-physics-system'/>
+    <plugin name='gz::sim::systems::UserCommands' filename='gz-sim-user-commands-system'/>
+    <plugin name='gz::sim::systems::SceneBroadcaster' filename='gz-sim-scene-broadcaster-system'/>
+    <plugin name='gz::sim::systems::Contact' filename='gz-sim-contact-system'/>
+    <gravity>0 0 -9.8000000000000007</gravity>
+    <magnetic_field>5.5644999999999998e-06 2.2875799999999999e-05 -4.2388400000000002e-05</magnetic_field>
+    <atmosphere type='adiabatic'/>
+    <scene>
+      <ambient>0.400000006 0.400000006 0.400000006 1</ambient>
+      <background>0.699999988 0.699999988 0.699999988 1</background>
+      <shadows>true</shadows>
+    </scene>
+    <model name='ground_plane'>
+      <static>true</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+          <surface>
+            <friction>
+              <ode/>
+            </friction>
+            <bounce/>
+            <contact/>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+          <material>
+            <ambient>0.800000012 0.800000012 0.800000012 1</ambient>
+            <diffuse>0.800000012 0.800000012 0.800000012 1</diffuse>
+            <specular>0.800000012 0.800000012 0.800000012 1</specular>
+          </material>
+        </visual>
+        <pose>0 0 0 0 0 0</pose>
+        <inertial>
+          <pose>0 0 0 0 0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <pose>0 0 0 0 0 0</pose>
+      <self_collide>false</self_collide>
+    </model>
+    <model name='brick_box_3x1x3'>
+      <static>true</static>
+      <link name='chassis'>
+        <pose>0 0 1.5 0 0 0</pose>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>3 1 3</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode/>
+            </friction>
+            <bounce/>
+            <contact/>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/shan/.gz/fuel/fuel.gazebosim.org/openrobotics/models/brick box 3x1x3/3/meshes/simple_box.dae</uri>
+              <scale>3 1 3</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <uri>file:///home/shan/.gz/fuel/fuel.gazebosim.org/openrobotics/models/brick box 3x1x3/3/materials/scripts</uri>
+              <uri>https://fuel.gazebosim.org/1.0/openrobotics/models/brick box 3x1x3/3/files/materials/textures</uri>
+              <name>BrickBox/Diffuse</name>
+            </script>
+          </material>
+        </visual>
+        <inertial>
+          <pose>0 0 0 0 0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <pose>1.0859399999999999 1.5033399999999999 0 0 0 0</pose>
+      <self_collide>false</self_collide>
+    </model>
+    <model name='brick_box_3x1x3_1'>
+      <static>true</static>
+      <link name='chassis'>
+        <pose>0 0 1.5 0 0 0</pose>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>3 1 3</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode/>
+            </friction>
+            <bounce/>
+            <contact/>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/shan/.gz/fuel/fuel.gazebosim.org/openrobotics/models/brick box 3x1x3/3/meshes/simple_box.dae</uri>
+              <scale>3 1 3</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <uri>file:///home/shan/.gz/fuel/fuel.gazebosim.org/openrobotics/models/brick box 3x1x3/3/materials/scripts</uri>
+              <uri>https://fuel.gazebosim.org/1.0/openrobotics/models/brick box 3x1x3/3/files/materials/textures</uri>
+              <name>BrickBox/Diffuse</name>
+            </script>
+          </material>
+        </visual>
+      </link>
+      <pose>-1.8680000000000001 1.49064 0 0 0 0</pose>
+      <self_collide>false</self_collide>
+    </model>
+    <model name='brick_box_3x1x3_0'>
+      <static>true</static>
+      <link name='chassis'>
+        <pose>0 0 1.5 0 0 0</pose>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>3 1 3</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode/>
+            </friction>
+            <bounce/>
+            <contact/>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/shan/.gz/fuel/fuel.gazebosim.org/openrobotics/models/brick box 3x1x3/3/meshes/simple_box.dae</uri>
+              <scale>3 1 3</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <uri>file:///home/shan/.gz/fuel/fuel.gazebosim.org/openrobotics/models/brick box 3x1x3/3/materials/scripts</uri>
+              <uri>https://fuel.gazebosim.org/1.0/openrobotics/models/brick box 3x1x3/3/files/materials/textures</uri>
+              <name>BrickBox/Diffuse</name>
+            </script>
+          </material>
+        </visual>
+        <inertial>
+          <pose>0 0 0 0 0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <pose>-2.8501117229461665 -0.46177765727043152 2.2204460492503131e-16 0 0 1.553600218715488</pose>
+      <self_collide>false</self_collide>
+    </model>
+    <model name='brick_box_3x1x3_0_1'>
+      <static>true</static>
+      <link name='chassis'>
+        <pose>0 0 1.5 0 0 0</pose>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>3 1 3</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode/>
+            </friction>
+            <bounce/>
+            <contact/>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/shan/.gz/fuel/fuel.gazebosim.org/openrobotics/models/brick box 3x1x3/3/meshes/simple_box.dae</uri>
+              <scale>3 1 3</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <uri>file:///home/shan/.gz/fuel/fuel.gazebosim.org/openrobotics/models/brick box 3x1x3/3/materials/scripts</uri>
+              <uri>https://fuel.gazebosim.org/1.0/openrobotics/models/brick box 3x1x3/3/files/materials/textures</uri>
+              <name>BrickBox/Diffuse</name>
+            </script>
+          </material>
+        </visual>
+      </link>
+      <pose>-2.9043192570063265 -3.3429449083096037 2.2204460492503131e-16 0 0 1.5536002187154885</pose>
+      <self_collide>false</self_collide>
+    </model>
+    <model name='brick_box_3x1x3_2'>
+      <static>true</static>
+      <link name='chassis'>
+        <pose>0 0 1.5 0 0 0</pose>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>3 1 3</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode/>
+            </friction>
+            <bounce/>
+            <contact/>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/shan/.gz/fuel/fuel.gazebosim.org/openrobotics/models/brick box 3x1x3/3/meshes/simple_box.dae</uri>
+              <scale>3 1 3</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <uri>file:///home/shan/.gz/fuel/fuel.gazebosim.org/openrobotics/models/brick box 3x1x3/3/materials/scripts</uri>
+              <uri>https://fuel.gazebosim.org/1.0/openrobotics/models/brick box 3x1x3/3/files/materials/textures</uri>
+              <name>BrickBox/Diffuse</name>
+            </script>
+          </material>
+        </visual>
+      </link>
+      <pose>4.0613879248668443 1.4644959174186485 0 0 0 0</pose>
+      <self_collide>false</self_collide>
+    </model>
+    <model name='brick_box_3x1x3_2_1'>
+      <static>true</static>
+      <link name='chassis'>
+        <pose>0 0 1.5 0 0 0</pose>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>3 1 3</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode/>
+            </friction>
+            <bounce/>
+            <contact/>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/shan/.gz/fuel/fuel.gazebosim.org/openrobotics/models/brick box 3x1x3/3/meshes/simple_box.dae</uri>
+              <scale>3 1 3</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <uri>file:///home/shan/.gz/fuel/fuel.gazebosim.org/openrobotics/models/brick box 3x1x3/3/materials/scripts</uri>
+              <uri>https://fuel.gazebosim.org/1.0/openrobotics/models/brick box 3x1x3/3/files/materials/textures</uri>
+              <name>BrickBox/Diffuse</name>
+            </script>
+          </material>
+        </visual>
+      </link>
+      <pose>-1.0378060407197052 -2.2189580614393809 0 0 0 0</pose>
+      <self_collide>false</self_collide>
+    </model>
+    <model name='brick_box_3x1x3_0_1_1'>
+      <static>true</static>
+      <link name='chassis'>
+        <pose>0 0 1.5 0 0 0</pose>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>3 1 3</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode/>
+            </friction>
+            <bounce/>
+            <contact/>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/shan/.gz/fuel/fuel.gazebosim.org/openrobotics/models/brick box 3x1x3/3/meshes/simple_box.dae</uri>
+              <scale>3 1 3</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <uri>file:///home/shan/.gz/fuel/fuel.gazebosim.org/openrobotics/models/brick box 3x1x3/3/materials/scripts</uri>
+              <uri>https://fuel.gazebosim.org/1.0/openrobotics/models/brick box 3x1x3/3/files/materials/textures</uri>
+              <name>BrickBox/Diffuse</name>
+            </script>
+          </material>
+        </visual>
+      </link>
+      <pose>-2.8579932577172329 -6.0575604802294407 2.2204460492503131e-16 0 0 1.5536002187154885</pose>
+      <self_collide>false</self_collide>
+    </model>
+    <model name='brick_box_3x1x3_2_1_1'>
+      <static>true</static>
+      <link name='chassis'>
+        <pose>0 0 1.5 0 0 0</pose>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>3 1 3</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode/>
+            </friction>
+            <bounce/>
+            <contact/>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/shan/.gz/fuel/fuel.gazebosim.org/openrobotics/models/brick box 3x1x3/3/meshes/simple_box.dae</uri>
+              <scale>3 1 3</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <uri>file:///home/shan/.gz/fuel/fuel.gazebosim.org/openrobotics/models/brick box 3x1x3/3/materials/scripts</uri>
+              <uri>https://fuel.gazebosim.org/1.0/openrobotics/models/brick box 3x1x3/3/files/materials/textures</uri>
+              <name>BrickBox/Diffuse</name>
+            </script>
+          </material>
+        </visual>
+      </link>
+      <pose>-0.98524414982931319 -7.0683990458815442 0 0 0 0</pose>
+      <self_collide>false</self_collide>
+    </model>
+    <model name='brick_box_3x1x3_2_1_3'>
+      <static>true</static>
+      <link name='chassis'>
+        <pose>0 0 1.5 0 0 0</pose>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>3 1 3</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode/>
+            </friction>
+            <bounce/>
+            <contact/>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/shan/.gz/fuel/fuel.gazebosim.org/openrobotics/models/brick box 3x1x3/3/meshes/simple_box.dae</uri>
+              <scale>3 1 3</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <uri>file:///home/shan/.gz/fuel/fuel.gazebosim.org/openrobotics/models/brick box 3x1x3/3/materials/scripts</uri>
+              <uri>https://fuel.gazebosim.org/1.0/openrobotics/models/brick box 3x1x3/3/files/materials/textures</uri>
+              <name>BrickBox/Diffuse</name>
+            </script>
+          </material>
+        </visual>
+      </link>
+      <pose>5.1573825495597223 -7.0721486778584062 0 0 0 0</pose>
+      <self_collide>false</self_collide>
+    </model>
+    <model name='brick_box_3x1x3_0_1_2'>
+      <static>true</static>
+      <link name='chassis'>
+        <pose>0 0 1.5 0 0 0</pose>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>3 1 3</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode/>
+            </friction>
+            <bounce/>
+            <contact/>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/shan/.gz/fuel/fuel.gazebosim.org/openrobotics/models/brick box 3x1x3/3/meshes/simple_box.dae</uri>
+              <scale>3 1 3</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <uri>file:///home/shan/.gz/fuel/fuel.gazebosim.org/openrobotics/models/brick box 3x1x3/3/materials/scripts</uri>
+              <uri>https://fuel.gazebosim.org/1.0/openrobotics/models/brick box 3x1x3/3/files/materials/textures</uri>
+              <name>BrickBox/Diffuse</name>
+            </script>
+          </material>
+        </visual>
+      </link>
+      <pose>5.5780062187802892 -0.47329462072460071 2.2204460492503131e-16 0 0 1.5536002187154885</pose>
+      <self_collide>false</self_collide>
+    </model>
+    <model name='brick_box_3x1x3_0_1_3'>
+      <static>true</static>
+      <link name='chassis'>
+        <pose>0 0 1.5 0 0 0</pose>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>3 1 3</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode/>
+            </friction>
+            <bounce/>
+            <contact/>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/shan/.gz/fuel/fuel.gazebosim.org/openrobotics/models/brick box 3x1x3/3/meshes/simple_box.dae</uri>
+              <scale>3 1 3</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <uri>file:///home/shan/.gz/fuel/fuel.gazebosim.org/openrobotics/models/brick box 3x1x3/3/materials/scripts</uri>
+              <uri>https://fuel.gazebosim.org/1.0/openrobotics/models/brick box 3x1x3/3/files/materials/textures</uri>
+              <name>BrickBox/Diffuse</name>
+            </script>
+          </material>
+        </visual>
+      </link>
+      <pose>6.1860409613828846 -5.2800732016078848 2.2204460492503131e-16 0 0 1.5536002187154885</pose>
+      <self_collide>false</self_collide>
+    </model>
+    <model name='brick_box_3x1x3_0_1_4'>
+      <static>true</static>
+      <link name='chassis'>
+        <pose>0 0 1.5 0 0 0</pose>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>3 1 3</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode/>
+            </friction>
+            <bounce/>
+            <contact/>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/shan/.gz/fuel/fuel.gazebosim.org/openrobotics/models/brick box 3x1x3/3/meshes/simple_box.dae</uri>
+              <scale>3 1 3</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <uri>file:///home/shan/.gz/fuel/fuel.gazebosim.org/openrobotics/models/brick box 3x1x3/3/materials/scripts</uri>
+              <uri>https://fuel.gazebosim.org/1.0/openrobotics/models/brick box 3x1x3/3/files/materials/textures</uri>
+              <name>BrickBox/Diffuse</name>
+            </script>
+          </material>
+        </visual>
+      </link>
+      <pose>6.0947704094312369 -2.5436341416120873 2.2204460492503131e-16 0 0 1.5536002187154885</pose>
+      <self_collide>false</self_collide>
+    </model>
+    <model name='brick_box_3x1x3_2_1_1_1'>
+      <static>true</static>
+      <link name='chassis'>
+        <pose>0 0 1.5 0 0 0</pose>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>3 1 3</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode/>
+            </friction>
+            <bounce/>
+            <contact/>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/shan/.gz/fuel/fuel.gazebosim.org/openrobotics/models/brick box 3x1x3/3/meshes/simple_box.dae</uri>
+              <scale>3 1 3</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <uri>file:///home/shan/.gz/fuel/fuel.gazebosim.org/openrobotics/models/brick box 3x1x3/3/materials/scripts</uri>
+              <uri>https://fuel.gazebosim.org/1.0/openrobotics/models/brick box 3x1x3/3/files/materials/textures</uri>
+              <name>BrickBox/Diffuse</name>
+            </script>
+          </material>
+        </visual>
+      </link>
+      <pose>1.4620675774728582 -7.1083057888639711 0 0 0 0</pose>
+      <self_collide>false</self_collide>
+    </model>
+    <model name='brick_box_3x1x3_2_1_1_1_1'>
+      <static>true</static>
+      <link name='chassis'>
+        <pose>0 0 1.5 0 0 0</pose>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>3 1 3</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode/>
+            </friction>
+            <bounce/>
+            <contact/>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>file:///home/shan/.gz/fuel/fuel.gazebosim.org/openrobotics/models/brick box 3x1x3/3/meshes/simple_box.dae</uri>
+              <scale>3 1 3</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <uri>file:///home/shan/.gz/fuel/fuel.gazebosim.org/openrobotics/models/brick box 3x1x3/3/materials/scripts</uri>
+              <uri>https://fuel.gazebosim.org/1.0/openrobotics/models/brick box 3x1x3/3/files/materials/textures</uri>
+              <name>BrickBox/Diffuse</name>
+            </script>
+          </material>
+        </visual>
+      </link>
+      <pose>2.6942210963302058 -7.1659286988361224 0 0 0 0</pose>
+      <self_collide>false</self_collide>
+    </model>
+    <light name='sun' type='directional'>
+      <pose>0 0 10 0 0 0</pose>
+      <cast_shadows>true</cast_shadows>
+      <intensity>1</intensity>
+      <direction>-0.5 0.10000000000000001 -0.90000000000000002</direction>
+      <diffuse>0.800000012 0.800000012 0.800000012 1</diffuse>
+      <specular>0.200000003 0.200000003 0.200000003 1</specular>
+      <attenuation>
+        <range>1000</range>
+        <linear>0.0099999997764825821</linear>
+        <constant>0.89999997615814209</constant>
+        <quadratic>0.0010000000474974513</quadratic>
+      </attenuation>
+      <spot>
+        <inner_angle>0</inner_angle>
+        <outer_angle>0</outer_angle>
+        <falloff>0</falloff>
+      </spot>
+    </light>
+  </world>
+</sdf>
