@@ -1,0 +1,28 @@
+<launch>
+    <let name="urdf_path" value="$(find-pkg-share my_robot_description)/urdf/mobile_robot.urdf.xacro"/>
+    <let name="rviz_path" value="$(find-pkg-share my_robot_bringup)/rviz/rviz_config.rviz"/>
+    <let name="gazebo_bridge" value="$(find-pkg-share my_robot_bringup)/config/gazebo_bridge.yaml"/>
+    <let name="ekf_config" value="$(find-pkg-share my_robot_bringup)/config/ekf.yaml"/>
+    <let name="world_file" value="$(find-pkg-share my_robot_bringup)/config/test3.sdf"/>
+    <node pkg="robot_state_publisher" exec="robot_state_publisher">
+        <param name="robot_description" value="$(command 'xacro $(var urdf_path)')"/>
+        <param name="use_sim_time" value="true"/>
+    </node>
+    <include file="$(find-pkg-share ros_gz_sim)/launch/gz_sim.launch.py">
+        <arg name="gz_args" value="$(var world_file) -r"/>
+    </include>
+    <node pkg="ros_gz_sim" exec="create" args="-topic robot_description"/>
+    <node pkg="ros_gz_bridge" exec="parameter_bridge">
+        <param name="config_file" value="$(var gazebo_bridge)"/>
+        <param name="use_sim_time" value="true"/>
+    </node>
+    <!-- <node pkg="slam_toolbox" exec="async_slam_toolbox_node" name="slam_toolbox" output="screen">
+        <param name="use_sim_time" value="true"/>
+        <param from="$(find-pkg-share slam_toolbox)/config/mapper_params_online_async.yaml"/>
+    </node> -->
+    <!-- <node pkg="robot_localization" exec="ekf_node" name="ekf_filter_node" output="screen">
+        <param from="$(var ekf_config)"/>
+        <param name="use_sim_time" value="true"/>
+    </node> -->
+    <node pkg="rviz2" exec="rviz2" args="-d $(var rviz_path)"/>
+</launch>
